@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML MEDIA</title>
+  </head>
+  <body>
+    <table border="1">
+      <tr style="background:gold; font-size:25px, font-weight:bold">
+        <th>Media Type</th>
+        <th>Media Content</th>
+        <th>Embed Google Form</th>
+      </tr>
+      <tr>
+        <td><h3>Video File</h3></td>
+        <td>
+          <!-- autoplay muted -->
+          <video
+            src="media/mov_bbb.mp4"
+            width="250"
+            type="video/mp4"
+            autoplay
+            muted
+            controls
+          >
+            Your browser does not support the video tag.
+          </video>
+        </td>
+        <td rowspan="3">
+
+        </td>
+      </tr>
+      <tr>
+        <td><h3>Embed Youtube Video</h3></td>
+        <td>
+          <iframe
+            width="300"
+            height="150"
+            src="https://www.youtube.com/embed/UB1O30fR-EE?si=p5sI7XNK79OG9k3U&amp;start=601"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><h3>Audio File</h3></td>
+        <td>
+          <audio src="media/champion.mp3" controls>
+
+          </audio>
+        </td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>
