@@ -1,21 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BLOCK VS INLINE</title>
     <style>
-        #main-nav li{
-            display:inline;
-        }
+      #main-nav {
+        background-color: #6e6969;
+      }
+      #main-nav li {
+        display: inline;
+      }
+      .highlight {
+        background-color: yellow;
+      }
+      .card {
+        background: #f4f4f4;
+        border: 1px solid #ccc;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      #contact ul {
+        list-style: none;
+      }
+      .label {
+        font-weight: bold;
+        background-color: #333;
+        color: white;
+      }
+      #footer {
+        text-align: center;
+        background-color: #c61b1b;
+        border-top: 2px dashed #0b0b0b;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Top Navigation Menu -->
-     <ul id="main-nav">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="">Contact</a></li>
-     </ul>
-</body>
+    <ul id="main-nav">
+      <li><a href="#">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="content">
+      <!-- Header Section -->
+      <div id="main-header" class="card">
+        <h1>My <span class="highlight">Website</span></h1>
+      </div>
+      <!-- About Section -->
+      <div id="about" class="card">
+        <h3>About</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+          nobis culpa, dolores ad dignissimos voluptates ducimus tempora
+          blanditiis esse repellat vero impedit eum voluptatibus, amet vel
+          dolorem saepe aperiam sed.
+        </p>
+      </div>
+      <!-- Contact Section -->
+      <div id="contact" class="card">
+        <!-- ul>li*3>span.label -->
+        <ul>
+          <li><span class="label">Address:</span>504 US46 <span style="font-size: 50px;">T</span>eterboro</li>
+          <li><span class="label">Phone:</span>(555)555-5555</li>
+          <li><span class="label">Email:</span>me@bergen.org</li>
+        </ul>
+      </div>
+      <!-- Footer Section -->
+       <div id="footer">
+        <p><span>&copy;</span>2024. All rights reserved!</p>
+       </div>
+    </div>
+  </body>
 </html>
