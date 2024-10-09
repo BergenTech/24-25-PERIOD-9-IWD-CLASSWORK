@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        color: #333;
+        line-height: 1.4;
+      }
+      .card {
+        background-color: #f4f4f4;
+        border: 1px solid #ddd;
+        padding: 20px;
+        margin-bottom: 10px;
+      }
+      #main {
+        float: left;
+        width: 70%;
+      }
+      #sidebar {
+        float: right;
+        width: 30%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="card" id="header">
+      <h1>My Website</h1>
+      <p>Just another website!</p>
+    </header>
+    <!-- main content -->
+    <main id="main">
+      <section id="welcome" class="card">
+        <h2>Welcome To Our Website</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+          Exercitationem ratione asperiores commodi iusto mollitia dicta,
+          quisquam quod accusantium sequi similique maiores sint quis minus,
+          nemo possimus fuga laudantium nostrum officia.<br />
+          <a href="#">Click For More</a>
+        </p>
+      </section>
+      <!-- Blog Section -->
+      <section id="blog" class="card">
+        <h2>From Our Blog</h2>
+        <!-- Article -->
+        <article class="article">
+          <h3>Article One</h3>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae
+            eum assumenda consectetur libero quasi veritatis ex error sed sunt
+            doloribus illum sequi minima repudiandae, ab temporibus, odio, iste
+            fuga dolorum.
+          </p>
+        </article>
+        <article class="article">
+          <h3>Article Two</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi in
+            libero suscipit harum facilis, dolorum accusamus esse dolor numquam
+            ut expedita iusto odit quisquam? Fugit eaque asperiores eos deleniti
+            debitis.
+          </p>
+        </article>
+      </section>
+    </main>
+    <!-- sidebar -->
+     <aside id="sidebar" class="card">
+        <h3>Navigation</h3>
+        <nav>
+            <ul id="main-nav">
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+     </aside>
+     <!-- footer -->
+      <footer>
+        <p>This is the footer section!</p>
+      </footer>
+  </body>
+</html>
