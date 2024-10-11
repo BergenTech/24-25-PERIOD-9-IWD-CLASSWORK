@@ -4,8 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin:0;
+            padding:0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+        }
+        nav {
+            margin: 0;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Events Page</h1>
+    <header>
+        <h1>Coding Club Events</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="events.html">Events</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <section class="content">
+        <h1>Upcoming Events</h1>
+        <!-- table>(tr>th*3)+(tr*3>td*3) -->
+        <table border="1">
+            <tr>
+                <th>Date</th>
+                <th>Event</th>
+                <th>Location</th>
+            </tr>
+            <tr>
+                <td>October 15, 2024</td>
+                <td>Hackathon</td>
+                <td>Room: 513</td>
+            </tr>
+            <tr>
+                <td>November 1, 2024</td>
+                <td>Coding Challenge</td>
+                <td>Media Center</td>
+            </tr>
+            <tr>
+                <td>December 10, 2024</td>
+                <td>Workshop: Web Development</td>
+                <td>Room: 513</td>
+            </tr>
+        </table>
+    </section>
 </body>
 </html>
