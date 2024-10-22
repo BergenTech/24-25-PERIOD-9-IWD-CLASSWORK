@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>CSS Combinators</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .example-container {
+            border: 1px solid #ddd;
+            margin: 30px 0;
+            padding: 20px;
+            border-radius: 8px;
+            background: #f9f9f9;
+        }
+
+        .split-view {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .code-section, .preview-section {
+            flex: 1;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .code-section {
+            background: #2d2d2d;
+            color: #fff;
+            font-family: monospace;
+            white-space: pre;
+            overflow-x: auto;
+        }
+
+        .preview-section {
+            background: white;
+            border: 1px solid #ddd;
+        }
+
+        .preview-title {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <h1>CSS Combinators:</h1>
+
+    <!-- Descendant Selector -->
+    <div class="example-container">
+        <h2>1. Descendant Selector (space)</h2>
+        <div class="split-view">
+            <div class="code-section">nav a {
+    color: blue;
+    text-decoration: none;
+}
+
+<span style="color: #888">&lt;nav class="ex1-nav"&gt;</span>
+    <span style="color: #888">&lt;a href="#"&gt;</span>Home<span style="color: #888">&lt;/a&gt;</span>
+    <span style="color: #888">&lt;div class="dropdown"&gt;</span>
+        <span style="color: #888">&lt;a href="#"&gt;</span>About<span style="color: #888">&lt;/a&gt;</span>
+    <span style="color: #888">&lt;/div&gt;</span>
+<span style="color: #888">&lt;/nav&gt;</span></div>
+            <div class="preview-section">
+                <div class="preview-title">Preview:</div>
+                <nav class="ex1-nav">
+                    <a href="#">Home</a>
+                    <div class="dropdown">
+                        <a href="#">About</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Child Selector -->
+    <div class="example-container">
+        <h2>2. Child Selector (>)</h2>
+        <div class="split-view">
+            <div class="code-section">.card > p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #0066cc;
+    background: #e6f0ff;
+    padding: 10px;
+}
+
+<span style="color: #888">&lt;div class="ex2-card"&gt;</span>
+    <span style="color: #888">&lt;p&gt;</span>This will be styled<span style="color: #888">&lt;/p&gt;</span>
+    <span style="color: #888">&lt;div&gt;</span>
+        <span style="color: #888">&lt;p&gt;</span>This won't be styled<span style="color: #888">&lt;/p&gt;</span>
+    <span style="color: #888">&lt;/div&gt;</span>
+<span style="color: #888">&lt;/div&gt;</span></div>
+            <div class="preview-section">
+                <div class="preview-title">Preview:</div>
+                <div class="ex2-card">
+                    <p>This will be styled</p>
+                    <div>
+                        <p>This won't be styled</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Adjacent Sibling -->
+    <div class="example-container">
+        <h2>3. Adjacent Sibling (+)</h2>
+        <div class="split-view">
+            <div class="code-section">h2 + p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #cc0066;
+}
+
+<span style="color: #888">&lt;div class="ex3"&gt;</span>
+    <span style="color: #888">&lt;h2&gt;</span>Section Title<span style="color: #888">&lt;/h2&gt;</span>
+    <span style="color: #888">&lt;p&gt;</span>This will be bold<span style="color: #888">&lt;/p&gt;</span>
+    <span style="color: #888">&lt;p&gt;</span>This won't be bold<span style="color: #888">&lt;/p&gt;</span>
+<span style="color: #888">&lt;/div&gt;</span></div>
+            <div class="preview-section">
+                <div class="preview-title">Preview:</div>
+                <div class="ex3">
+                    <h2>Section Title</h2>
+                    <p>This will be bold</p>
+                    <p>This won't be bold</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- General Sibling -->
+    <div class="example-container">
+        <h2>4. General Sibling (~)</h2>
+        <div class="split-view">
+            <div class="code-section">.warning ~ p {
+    padding-left: 20px;
+    color: #666;
+    border-left: 3px solid #ffcccc;
+}
+
+<span style="color: #888">&lt;div class="ex4"&gt;</span>
+    <span style="color: #888">&lt;p&gt;</span>Normal paragraph<span style="color: #888">&lt;/p&gt;</span>
+    <span style="color: #888">&lt;div class="warning"&gt;</span>Warning message!<span style="color: #888">&lt;/div&gt;</span>
+    <span style="color: #888">&lt;p&gt;</span>This will be styled<span style="color: #888">&lt;/p&gt;</span>
+    <span style="color: #888">&lt;div&gt;</span>Some other content<span style="color: #888">&lt;/div&gt;</span>
+    <span style="color: #888">&lt;p&gt;</span>This will also be styled<span style="color: #888">&lt;/p&gt;</span>
+<span style="color: #888">&lt;/div&gt;</span></div>
+            <div class="preview-section">
+                <div class="preview-title">Preview:</div>
+                <div class="ex4">
+                    <p>Normal paragraph</p>
+                    <div class="warning">Warning message!</div>
+                    <p>This will be styled</p>
+                    <div>Some other content</div>
+                    <p>This will also be styled</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

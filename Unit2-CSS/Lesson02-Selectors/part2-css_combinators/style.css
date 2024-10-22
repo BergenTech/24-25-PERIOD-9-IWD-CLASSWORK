@@ -1,0 +1,32 @@
+/* Example 1: Descendant Selector(space) */
+/* selects all the a tags inside ex1-nav class */
+.ex1-nav a { 
+    color:aqua;
+    text-decoration: none;
+}
+
+/* Example2 - Child Selector(>) */
+/* selects only direct child of an element */
+.ex2-card > p {
+    font-size: 14px;
+    line-height: 1.5;
+    color:blueviolet;
+    background-color: blanchedalmond;
+    padding: 10px;
+}
+
+/* Example 3 - Adjacent Sibling (+) */
+/* select a paragraph that comes IMMEDIATELY after h2 inside ex3 class */
+.ex3 h2 + p {
+    font-size: 20px;
+    font-weight: bold;
+    color:#cc0066;
+}
+
+/* Example 4 - General Sibling ~ */
+/* Select all the paragraphs that come after .warning class */
+.ex4 .warning ~ p {
+    padding-left: 20px;
+    color: #666;
+    border-left: 3px solid #ffcccc;
+}
