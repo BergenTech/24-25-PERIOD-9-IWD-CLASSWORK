@@ -1,0 +1,36 @@
+/* Task 1 - Hover Effects */
+.hover-button{
+    padding: 10px 20px;
+    border:none;
+    background-color: #3498db;
+    color:white;
+    cursor:pointer;
+    transition: all 0.3s ease;
+}
+/* changes on hover */
+.hover-button:hover {
+    background-color: #09ea2f;
+    transform: scale(1.1);
+}
+/* Task 2 - Focus States */
+.focus-input {
+    padding: 8px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    width: 200px;
+}
+.focus-input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+/* Task 3-1 First Child */
+.first-child-list li:first-child {
+    font-weight: bold;
+    color:red;
+}
+/* Task 3-2 Last Child */
+.first-child-list li:last-child {
+    font-family: Arial, Helvetica, sans-serif;
+    color:rgb(11, 173, 232);
+}
