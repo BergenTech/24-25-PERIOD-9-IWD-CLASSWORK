@@ -1,0 +1,39 @@
+#pixel-exercise div {
+    width: 160px;
+    height: 160px;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#rem-exercise div {
+    width: 10rem;
+    height: 10rem;
+    font-size: 1rem;
+    background-color: rgb(33, 18, 171);
+    color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#percent-exercise div {
+    width: 50%;
+    height: 50%;
+    font-size: 36px;
+    background-color: rgb(233, 188, 7);
+    color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#viewport-exercise div {
+    width: 50vw;
+    height: 50vh;
+    font-size: 24px;
+    background-color: rgb(220, 13, 182);
+    color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

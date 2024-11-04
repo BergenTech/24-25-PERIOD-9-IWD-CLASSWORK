@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Units Practice Lab</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    h1, h2, h3 {
+      margin-top: 0;
+    }
+
+  </style>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>CSS Units Practice Lab</h1>
+
+    <!-- Pixel Exercise -->
+    <section id="pixel-exercise">
+      <h2>Pixels (px)</h2>
+      <p>Pixels (px) are an absolute unit, meaning they represent a fixed physical size on the screen. In this exercise, we are using pixels to set the width and height of a div to 200px each.</p>
+      <div>160px x 160px</div>
+    </section>
+    
+    <!-- Rem Exercise -->
+    <section id="rem-exercise">
+        <h2>Rem (rem)</h2>
+        <p>Rem (root em) is a relative unit that is based on the font size of the root element (usually the <code>html</code> element). In this exercise, we are using rem to set the width and height of a div to 20rem, which will be relative to the root font size.</p>
+        <div>10rem x 10rem</div>
+    </section>
+    
+    <!-- Em Exercise -->
+    <section id="em-exercise">
+        <h2>Em (em)</h2>
+        <p>Em (em) is a relative unit that is based on the font size of the current element. In this exercise, we are using em to set the width and height of a div to 20em, which will be relative to the font size of the div itself.</p>
+        <div>20em x 20em</div>
+    </section>
+    
+    <!-- Percent Exercise -->
+    <section id="percent-exercise">
+      <h2>Percent (%)</h2>
+      <p>Percent (%) is a relative unit, meaning the size is calculated based on the size of the parent element. In this exercise, we are using percent to set the width and height of a div to 50% of the parent container.</p>
+      <div>50% x 50%</div>
+    </section>
+
+    <!-- Viewport Exercise -->
+    <section id="viewport-exercise">
+        <h2>Viewport Units (vw, vh)</h2>
+      <p>Viewport units (vw, vh) are relative units that are based on the size of the viewport (the visible area of the web page). In this exercise, we are using vw (viewport width) and vh (viewport height) to set the width and height of a div to 50% of the viewport size.</p>
+      <div>50vw x 50vh</div>
+    </section>
+
+  </div>
+</body>
+</html>

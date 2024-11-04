@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        :root {
+            --base-font-size: 16px;
+        }
+
+        body {
+            font-family: system-ui, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            font-size: var(--base-font-size);
+        }
+        
+        .demo-box {
+            background: #e9ecef;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .unit-control {
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .example {
+            border: 2px solid #dee2e6;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+            min-height: 150px;
+            position: relative;
+        }
+
+        #pixel-box {
+            width: 100px;
+            height: 100px;
+            background: #4263eb;
+            transition: all 0.3s ease;
+        }
+
+        #em-text {
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        #rem-text {
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        #percent-box {
+            width: 50%;
+            height: 50px;
+            background: #40c057;
+            transition: all 0.3s ease;
+        }
+
+        #vw-box {
+            width: 50vw;
+            height: 50px;
+            background: #f76707;
+            transition: all 0.3s ease;
+        }
+
+        #vh-box {
+            width: 100px;
+            height: 20vh;
+            background: #ae3ec9;
+            transition: all 0.3s ease;
+        }
+
+        input[type="range"] {
+            width: 200px;
+        }
+
+        .result {
+            font-family: monospace;
+            color: #495057;
+            min-width: 60px;
+        }
+
+        .description {
+            color: #495057;
+            margin-bottom: 15px;
+        }
+
+        .tabs {
+            margin-top: 20px;
+        }
+
+        button.unit-toggle {
+            padding: 8px 16px;
+            margin-right: 8px;
+            border: none;
+            background: #dee2e6;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button.unit-toggle.active {
+            background: #4263eb;
+            color: white;
+        }
+
+        .viewport-note {
+            color: #666;
+            font-style: italic;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Units Interactive Demo</h1>
+    
+    <div class="demo-box">
+        <h3>Pixels (px) - Absolute Unit</h3>
+        <p class="description">Pixels are fixed-size units that remain consistent regardless of screen size or parent element.</p>
+        <div class="unit-control">
+            <label>Adjust size: </label>
+            <input type="range" min="50" max="200" value="100" 
+                   oninput="updatePixels(this.value)">
+            <span class="result" id="pixel-value">100px</span>
+        </div>
+        <div class="example">
+            <div id="pixel-box"></div>
+        </div>
+    </div>
+
+    <div class="demo-box">
+        <h3>Em (em) - Relative Unit</h3>
+        <p class="description">Em units are relative to the parent element's font size. Change the parent's font size to see how it affects the text.</p>
+        <div class="unit-control">
+            <label>Parent font-size: </label>
+            <input type="range" min="12" max="24" value="16" 
+                   oninput="updateParentEm(this.value)">
+            <span class="result" id="parent-em-value">16px</span>
+        </div>
+        <div class="unit-control">
+            <label>Em value: </label>
+            <input type="range" min="0.5" max="3" value="1" step="0.1" 
+                   oninput="updateEm(this.value)">
+            <span class="result" id="em-value">1em</span>
+        </div>
+        <div class="example" id="em-parent">
+            <div id="em-text">This text will change size relative to parent</div>
+        </div>
+    </div>
+
+    <div class="demo-box">
+        <h3>Root Em (rem) - Root Relative Unit</h3>
+        <p class="description">Rem units are relative to the root (html) element's font size, providing more predictable scaling.</p>
+        <div class="unit-control">
+            <label>Root font-size: </label>
+            <input type="range" min="12" max="24" value="16" 
+                   oninput="updateRootFont(this.value)">
+            <span class="result" id="root-value">16px</span>
+        </div>
+        <div class="unit-control">
+            <label>Rem value: </label>
+            <input type="range" min="0.5" max="3" value="1" step="0.1" 
+                   oninput="updateRem(this.value)">
+            <span class="result" id="rem-value">1rem</span>
+        </div>
+        <div class="example">
+            <div id="rem-text">This text will change size relative to root</div>
+        </div>
+    </div>
+
+    <div class="demo-box">
+        <h3>Percentage (%) - Relative Unit</h3>
+        <p class="description">Percentages are relative to the parent element's size.</p>
+        <div class="unit-control">
+            <label>Adjust width: </label>
+            <input type="range" min="10" max="100" value="50" 
+                   oninput="updatePercent(this.value)">
+            <span class="result" id="percent-value">50%</span>
+        </div>
+        <div class="example">
+            <div id="percent-box"></div>
+        </div>
+    </div>
+
+    <div class="demo-box">
+        <h3>Viewport Width (vw) - Viewport Relative Unit</h3>
+        <p class="description">Viewport width units are relative to the browser window's width. 1vw = 1% of viewport width.</p>
+        <div class="unit-control">
+            <label>Adjust width: </label>
+            <input type="range" min="10" max="100" value="50" 
+                   oninput="updateVw(this.value)">
+            <span class="result" id="vw-value">50vw</span>
+        </div>
+        <div class="example">
+            <div id="vw-box"></div>
+        </div>
+        <p class="viewport-note">Try resizing your browser window to see how vw responds!</p>
+    </div>
+
+    <div class="demo-box">
+        <h3>Viewport Height (vh) - Viewport Relative Unit</h3>
+        <p class="description">Viewport height units are relative to the browser window's height. 1vh = 1% of viewport height.</p>
+        <div class="unit-control">
+            <label>Adjust height: </label>
+            <input type="range" min="10" max="50" value="20" 
+                   oninput="updateVh(this.value)">
+            <span class="result" id="vh-value">20vh</span>
+        </div>
+        <div class="example">
+            <div id="vh-box"></div>
+        </div>
+        <p class="viewport-note">Try resizing your browser window to see how vh responds!</p>
+    </div>
+
+    <script>
+        function updatePixels(value) {
+            document.getElementById('pixel-box').style.width = value + 'px';
+            document.getElementById('pixel-box').style.height = value + 'px';
+            document.getElementById('pixel-value').textContent = value + 'px';
+        }
+
+        function updateParentEm(value) {
+            document.getElementById('em-parent').style.fontSize = value + 'px';
+            document.getElementById('parent-em-value').textContent = value + 'px';
+        }
+
+        function updateEm(value) {
+            document.getElementById('em-text').style.fontSize = value + 'em';
+            document.getElementById('em-value').textContent = value + 'em';
+        }
+
+        function updateRootFont(value) {
+            document.documentElement.style.fontSize = value + 'px';
+            document.getElementById('root-value').textContent = value + 'px';
+        }
+
+        function updateRem(value) {
+            document.getElementById('rem-text').style.fontSize = value + 'rem';
+            document.getElementById('rem-value').textContent = value + 'rem';
+        }
+
+        function updatePercent(value) {
+            document.getElementById('percent-box').style.width = value + '%';
+            document.getElementById('percent-value').textContent = value + '%';
+        }
+
+        function updateVw(value) {
+            document.getElementById('vw-box').style.width = value + 'vw';
+            document.getElementById('vw-value').textContent = value + 'vw';
+        }
+
+        function updateVh(value) {
+            document.getElementById('vh-box').style.height = value + 'vh';
+            document.getElementById('vh-value').textContent = value + 'vh';
+        }
+    </script>
+</body>
+</html>
