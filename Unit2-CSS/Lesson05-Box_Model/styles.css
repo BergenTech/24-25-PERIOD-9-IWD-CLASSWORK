@@ -1,0 +1,31 @@
+/* * {
+    border: 1px solid black;
+} */
+
+.card {
+    width: 250px;
+    height: 350px;
+    border: 3px solid #007acc;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 15px;
+    text-align: center;
+}
+.card img {
+    border-radius: 10px 30px 0 0;
+    border-bottom-left-radius: 30px;
+    margin: 5px 10px 0 0;
+}
+
+.card-button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    color: #fff;
+    background-color: #007acc;
+    border:none;
+    cursor:pointer;
+}
+
+.card-button:hover{
+    background-color: #f8bb04;
+}
