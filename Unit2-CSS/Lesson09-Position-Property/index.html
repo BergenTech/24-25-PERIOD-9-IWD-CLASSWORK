@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      /* Basic Styling */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* Header */
+      header {
+        text-align: center;
+        padding: 10px;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Positioning</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <h1>CSS Positioning</h1>
+    </header>
+    <!-- Part 1: Static Position (Default) -->
+     <section class="content-section">
+      <h2>Static Position (Default)</h2>
+      <p>This section is in the default document flow</p>
+     </section>
+
+     <!-- Part2: Relative Position - Callout Box -->
+      <div class="relative-box">
+        <p>This box is relatively positioned to stand out slightly.</p>
+      </div>
+
+      <!-- Part3: Positioning inside a container -->
+       <section class="content-section">
+        <h2>Positioning inside a container</h2>
+        <div class="outer-box">
+          <div class="inner-box">
+            Inner Box
+          </div>
+        </div>
+       </section>
+
+       <div class="fixed-banner">
+        <p>Fixed Banner: Stays at the top of the viewport on scroll.</p>
+       </div>
+  </body>
+</html>
