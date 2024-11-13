@@ -1,0 +1,30 @@
+div {
+    width: 600px;
+    height: 600px;
+    /* border: 10px dotted yellow; */
+    border: 1px solid grey;
+    margin: 50px auto;
+    background-color: red;
+    background-image: url(sonic.png);
+    background-repeat: no-repeat;
+    /* repeat-x repeat-y repeat */
+    background-size: 200px;
+    /* background-size: contain; */
+    background-size: cover;
+    background-position: center;
+    /* all types of directions work here */
+    /* scroll, fixed */
+    background-attachment: ;
+    /* display: none; */
+    /* background-clip: padding-box; */
+    /* background-clip: border-box; */
+    background: url(sonic.png) center/cover no-repeat green;
+    /* Image, pos/size, repeat, attachment, origin, clip, color */
+}
+/* 
+body {
+    background-image: url(sonic.png);
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-attachment:fixed ;
+} */

@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+}
+
+h1 {
+    background-color: lightblue;
+    /* display: inline; */
+}
+
+h2 {
+    background-color: lightgoldenrodyellow;
+    /* display: inline; */
+}
+
+p {
+    background-color: lightgreen;
+    /* display: none; */
+}
+
+strong {
+    background-color: lightpink;
+    /* border: 3px solid blue;
+    margin: 2rem;
+    padding: 2rem; */
+    /* display: block; */
+}
+
+a {
+    background-color: lightsalmon;
+    border: 3px solid blue;
+    margin: 2rem;
+    padding: 2rem;
+    display: inline-block;
+    /* display: block; */
+    /* display only respects horizonal aspects of margin and paddding, not vertical */
+}
+
+/* Display: block, inline, inline-block, none */
+
+
+
+
+
+
+
+/* Extra attributes:  flex, grid */
