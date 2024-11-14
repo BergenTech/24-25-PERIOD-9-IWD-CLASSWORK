@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Flexbox Lesson - Part 1</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>CSS Flexbox Part 1: Properties for the Parent (Flex Container)</h1>
+
+  <h2>display: flex;</h2>
+  <p>Turns the parent element into a flex container, enabling its child elements to be arranged using the flexbox layout.</p>
+  <div class="container">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+
+  <h2>flex-direction</h2>
+  <p>Defines the direction of the main axis, determining the placement of flex items.</p>
+
+  <h3>flex-direction: row</h3>
+  <p>Items are arranged horizontally from left to right (default direction).</p>
+  <div class="container row" style="flex-direction:row">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+
+  <h3>flex-direction: column</h3>
+  <p>Items are arranged vertically from top to bottom.</p>
+  <div class="container column" style="flex-direction:column">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+
+  <h3>flex-direction: row-reverse</h3>
+  <p>Items are arranged horizontally, but in reverse order (from right to left).</p>
+  <div class="container" style="flex-direction:row-reverse">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+
+  <h3>flex-direction: column-reverse</h3>
+  <p>Items are arranged vertically, but in reverse order (from bottom to top).</p>
+  <div class="container" style="flex-direction:column-reverse">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+
+  <h2>flex-wrap</h2>
+  <p>Specifies whether flex items should wrap or not.</p>
+
+  <h3>flex-wrap: nowrap</h3>
+  <p>Items will not wrap, and will try to fit into a single line (default).</p>
+  <div class="container nowrap">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+    <div class="item">Item 4</div>
+    <div class="item">Item 5</div>
+  </div>
+
+  <h3>flex-wrap: wrap</h3>
+  <p>Items will wrap onto multiple lines if necessary.</p>
+  <div class="container" style="flex-wrap:wrap">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+    <div class="item">Item 4</div>
+    <div class="item">Item 5</div>
+  </div>
+
+  <h3>flex-wrap: wrap-reverse</h3>
+  <p>Items will wrap onto multiple lines, but in reverse order.</p>
+  <div class="container" style="flex-wrap:wrap-reverse">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+    <div class="item">Item 4</div>
+    <div class="item">Item 5</div>
+  </div>
+
+  <h2>justify-content</h2>
+  <p>Defines how flex items are distributed along the main axis.</p>
+
+  <h3>justify-content: flex-start</h3>
+  <p>Items are aligned to the start of the container (default behavior).</p>
+  <div class="container flex-start">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+
+  <h3>justify-content: flex-end</h3>
+  <p>Items are aligned to the end of the container.</p>
+  <div class="container" style="justify-content:flex-end">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+
+  <h3>justify-content: center</h3>
+  <p>Items are aligned at the center of the container.</p>
+  <div class="container" style="justify-content:center">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+
+  <h3>justify-content: space-between</h3>
+  <p>Items are spaced evenly, with the first item aligned to the start and the last item aligned to the end of the container.</p>
+  <div class="container" style="justify-content:space-between">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+
+  <h3>justify-content: space-around</h3>
+  <p>Items are spaced evenly, with equal space around them.</p>
+  <div class="container" style="justify-content:space-around">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+
+  <h3>justify-content: space-evenly</h3>
+  <p>Items are spaced evenly, with equal space between them and around them.</p>
+  <div class="container" style="justify-content:space-evenly">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+
+  <h2>align-items</h2>
+  <p>Defines how flex items are distributed along the cross axis.</p>
+
+  <h3>align-items: flex-start</h3>
+  <p>Items are aligned to the start of the cross axis (top for row direction, left for column direction).</p>
+  <div class="container" style="align-items: flex-start">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+
+  <h3>align-items: flex-end</h3>
+  <p>Items are aligned to the end of the cross axis (bottom for row direction, right for column direction).</p>
+  <div class="container"style="align-items: flex-end; justify-content:center">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+
+  <h3>align-items: center</h3>
+  <p>Items are aligned to the center of the cross axis.</p>
+  <div class="container" style="align-items: center">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+
+  <h3>align-items: stretch</h3>
+  <p>Items stretch to fill the container along the cross axis (default behavior).</p>
+  <div class="container" style="align-items: strech">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+
+</body>
+</html>
