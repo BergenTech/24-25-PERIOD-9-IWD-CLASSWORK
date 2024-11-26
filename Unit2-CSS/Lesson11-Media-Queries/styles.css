@@ -50,10 +50,51 @@
     .movie-card {
         width: calc(50% - 15px)
     }
+
+    .navbar .logo {
+        font-size: 1.8em;
+      }
+       /* Hide the desktop menu and show the hamburger */
+      .navbar .menu {
+        display: none;
+      }
+       .hamburger {
+        display: block;
+      }
+       /* Hide the mobile menu by default */
+      .menu-mobile {
+        display: none;
+      }
+       /* Show the mobile menu when active */
+      .menu-mobile.active {
+        display: flex;
+      }
+       .movies-container {
+        justify-content: space-evenly;
+      }
+   
 }
 /* Large Screen Size */
 @media screen and (min-width: 1024px){
     .movie-card {
         width: calc(25% - 15px)
     }
+    .navbar .logo {
+        font-size: 2.5em;
+      }
+       /* Show the desktop menu and hide the hamburger */
+      .navbar .menu {
+        display: flex;
+      }
+       .hamburger {
+        display: none;
+      }
+       /* Hide the mobile menu */
+      .menu-mobile {
+        display: none;
+      }
+       .movies-container {
+        justify-content: start;
+      }
+   
 }
