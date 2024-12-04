@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Transitions & Animations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .examples-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .example-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 20px auto;
+            background-color: #3498db;
+        }
+
+   
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>CSS Transitions & Animations </h1>
+    
+    <h2>Transition Examples</h2>
+    <div class="examples-container">
+        <div class="example-card">
+            <h3>Scale Transition</h3>
+            <div class="box transition-scale"></div>
+        </div>
+        <div class="example-card">
+            <h3>Color Transition</h3>
+            <div class="box transition-color"></div>
+        </div>
+        <div class="example-card">
+            <h3>Rotate Transition</h3>
+            <div class="box transition-rotate"></div>
+        </div>
+        <div class="example-card">
+            <h3>Move Transition</h3>
+            <div class="box transition-move"></div>
+        </div>
+    </div>
+
+    <h2>Animation Examples</h2>
+    <div class="examples-container">
+        <div class="example-card">
+            <h3>Bounce Animation</h3>
+            <div class="box animation-bounce"></div>
+        </div>
+        <div class="example-card">
+            <h3>Spin Animation</h3>
+            <div class="box animation-spin"></div>
+        </div>
+        <div class="example-card">
+            <h3>Pulse Animation</h3>
+            <div class="box animation-pulse"></div>
+        </div>
+        <div class="example-card">
+            <h3>Color Cycle Animation</h3>
+            <div class="box animation-color-cycle"></div>
+        </div>
+    </div>
+</body>
+</html>
