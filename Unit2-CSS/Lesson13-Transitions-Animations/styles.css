@@ -24,10 +24,20 @@
 }
 
 /* 4 - Move Transition */
+
+@keyframes backAndForth {
+    0% {transform: translateX(0);}
+    50% {transform: translateX(50px);}
+    100% {transform: translateX(0);}
+}
+
 .transition-move:hover {
+    animation: backAndForth 1s ease-in-out infinite;
+}
+/* .transition-move:hover {
     transform: translateX(50px);
     transition: transform 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
-}
+} */
 
 /* 1 - Bounce Animation */
 @keyframes bounce {
@@ -46,5 +56,46 @@
     to {transform:rotate(360deg);}
 }
 .animation-spin {
-    animation: spin 0.1s linear infinite;
+    /* animation: spin 0.5s linear infinite alternate; */
+    animation: spin 0.5s linear infinite;
+}
+
+/* 3 - Pulse Animation */
+@keyframes pulse {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.1);}
+    100% {transform: scale(1);}
+}
+
+.animation-pulse {
+    animation: pulse 0.3s infinite;
+}
+
+/* 4 - Color Cycle Animation */
+@keyframes color-cycle {
+    0% {background-color: #3498db;}
+    25% {background-color: #08da0f;}
+    50% {background-color: #dfb809;}
+    75% {background-color: #eb1395;}
+    100% {background-color: #19192c;}
+}
+
+.animation-color-cycle {
+    animation: color-cycle 3s infinite alternate;
+}
+
+/* 5 - Shake Animation */
+@keyframes shake {
+    0% {transform:translateX(0);}
+    25% {transform:translateX(-5px);}
+    50% {transform:translateX(5px);}
+    75% {transform:translateX(-5px);}
+    100% {transform:translateX(0);}
+}
+
+.animation-shake {
+    animation: shake 0.1s infinite,
+               color-cycle 3s infinite,
+               spin 0.5s linear infinite,
+               pulse 1s infinite;
 }
