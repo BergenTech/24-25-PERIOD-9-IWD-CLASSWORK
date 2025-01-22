@@ -34,11 +34,38 @@ if(userNum % 2 == 0){
 // Part 3: 'if-else-if' Statement
 // Syntax: if (condition1) { ... } else if (condition2) { ... } else { ... }
 // Explanation: Executes the first block if condition1 is true, the second if condition2 is true, or the last block if none are true.
-let score = 95;
-if(score >=90){
-    console.log(`${score}:A`)
-}
+// let score = 50;
+// if(score >=90){
+//     console.log(`${score}:A`)
+// }
+// else if(score >=80){
+//     console.log(`${score}:B`)
+// }
+// else if(score >=70){
+//     console.log(`${score}:C`)
+// }else if(score >=60){
+//     console.log(`${score}:D`)
+// }else {
+//     console.log(`${score}:F`)
+// }
+let score = 50;
+// score = parseInt(prompt("Enter Grade:"))
+let letter = "";
+if(score >=90) letter = 'A';
+else if(score >=80) letter = 'B';
+else if(score >=70) letter = 'C';
+else if(score >=60) letter = 'D';
+else letter = 'F'
+console.log(`${score}:${letter}`)
 
 
 // Example - Combining Booleans with if Statements
 // Vote Eligibility - must be at least 18 and us citizen
+let age = 20;
+let isCitizen = true;
+
+if(age>=18 && isCitizen){
+    console.log("You are eligible to vote!")
+}else{
+    console.log("You are not eligible to vote!")
+}
