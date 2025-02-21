@@ -11,6 +11,8 @@ let fahrenheitTemps = celsiusTemps.map(t => (t*9/5)+32)
 console.log(fahrenheitTemps) 
 
 
+
+
 // Example 2: Doubling the price of items in an array
 let prices = [5, 10, 15, 20];
 // 1. Use the map() method to double each price.
