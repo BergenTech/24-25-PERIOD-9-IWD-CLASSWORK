@@ -61,14 +61,26 @@ console.log(user['address']['city'])
 // 3. Property Manipulation
 // ------------------------------
 
-
 // Practice adding, updating, and deleting properties here
+// Adding
+user.age = 20;
+user["phone"] = '555-222-1111'
+console.log(user)
 
+//updating properties
+user.age = 25;
+
+//deleting properties
+delete user.phone
+console.log(user.phone) // undefined
+
+//checking if a property exists
+console.log('phone' in user)//false
+console.log(user.hasOwnProperty('age'))//true
 
 // ------------------------------
 // 4. Object Methods
 // ------------------------------
-
 
 const methods = {
     // Method shorthand
@@ -91,19 +103,27 @@ const methods = {
 const example = { a: 1, b: 2, c: 3 };
 
 
-// Practice using Object.keys() here
+// Practice using Object.keys(object_name) here
+console.log(Object.keys(example)) //[a,b,c]
 // Practice using Object.values() here
+console.log(Object.values(example)) //[1,2,3]
 // Practice using Object.entries() here
+console.log(Object.entries(example)) //[['a', 1],['b', 2], ['c', 3]]
 // Practice using Object.assign() here
-
-
+//copies properties from one object to another
+const target = {x:1}
+const source = {y:2}
+Object.assign(target, source)
+console.log(target) //{x: 1, y: 2}
 // ------------------------------
 // 6. Common Pitfalls
 // ------------------------------
 
-
 // Pitfall 1: Mutating objects unintentionally
 const original = { x: 1 };
+const copy = original //this creates a reference, not a copy
+copy.x = 2 //Also changes original.x
+console.log(original)
 // Practice creating proper copies here
 
 
@@ -120,7 +140,17 @@ const person3 = {
     name: 'John',
     greet() {
         // Practice with correct 'this' usage here
+        console.log(`Hello, ${this.name}`)
     }
 };
+const person4 = {
+    name: 'Mike',
+    greet() {
+        // Practice with correct 'this' usage here
+        console.log(`Hello, ${this.name}`)
+    }
+};
+console.log(person3.greet())
+console.log(person4.greet())
 
 
