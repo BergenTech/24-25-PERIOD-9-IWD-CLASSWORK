@@ -19,7 +19,7 @@
 <body class="p-4">
     <div class="container">
         <div class="card p-3 text-center" style="max-width: 400px; margin: auto;">
-            <img src="https://randomuser.me/api/portraits/men/1.jpg" id="profile-img" class="rounded-circle mx-auto d-block" alt="Profile Image" style="cursor: pointer;">
+            <img onclick="changeImage()" src="https://randomuser.me/api/portraits/men/1.jpg" id="profile-img" class="rounded-circle mx-auto d-block" alt="Profile Image" style="cursor: pointer;">
             <h2 id="profile-name">John Doe</h2>
             <p id="profile-bio">Web Developer and Tech Enthusiast.</p>
             <h5>Interests</h5>
@@ -27,12 +27,12 @@
                 <li class="list-group-item">Coding</li>
                 <li class="list-group-item">Music</li>
             </ul>
-            <button class="btn btn-primary mb-2" >Change Name</button>
+            <button class="btn btn-primary mb-2" onclick="changeName()">Change Name</button>
             <button class="btn btn-secondary mb-2" >Change Bio</button>
-            <button class="btn btn-success mb-2" >Add Interest</button>
-            <button class="btn btn-dark" >Toggle Theme</button>
+            <button onclick="addInterest()" class="btn btn-success mb-2" >Add Interest</button>
+            <button class="btn btn-dark" onclick="toggleTheme()">Toggle Theme</button>
         </div>
     </div>
-    
+    <script src="scripts.js"></script>
 </body>
 </html>
