@@ -47,6 +47,28 @@
             <li>🐯</li>
         </ul>
     </div>
+    <script>
+        /* -1
+        const lists = document.querySelectorAll('ul')
+        //console.log(lists)
+        lists.forEach(ul => {
+            let items = ul.querySelectorAll('li')
+            //console.log(items)
+            items[0].innerText = 'first'
+            items[2].innerText = 'last'
+        })
+        */
+        /* -2
+        document.querySelectorAll('ul').forEach(ul =>{
+            let items = ul.querySelectorAll('li')
+            items[0].innerText = 'first'
+            items[items.length-1].innerText = 'last'
+        })
+        */
+        document.querySelectorAll("ul > li:first-child").forEach(li => li.textContent = "first")
+        document.querySelectorAll("ul > li:last-child").forEach(li => li.textContent = "last")
+
+    </script>
 
 </body>
 </html>
