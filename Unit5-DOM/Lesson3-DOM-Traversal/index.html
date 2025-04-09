@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <span id="hello">Hello</span>
+        <!-- Before the next span -->
+        <span>World</span>
+    </div>
+    <form id="form1">
+        First name: <input type="text" name="fname" value="" placeholder="Your First Name"/><br />
+        Last name: <input type="text" name="lname" value="" placeholder="Your Last Name"/><br />
+        <!-- <input type="submit" value="Submit" /> -->
+        <input type="submit" onclick="updateNameHeading()" value="Submit" />
+        <h2 id="nameDisplay">Name:</h2>
+      </form>
+    <script>
+        let chosen = document.getElementById("hello")
+        //let output = chosen.nextSibling.nextSibling.textContent
+        let output = chosen.nextSibling.nextElementSibling.textContent
+        console.log(output.toUpperCase())
+        function updateNameHeading(){
+            //console.log("That works!")
+            const fn = document.forms["form1"]["fname"].value
+            const ln = document.forms["form1"]["lname"].value
+
+            const display = document.querySelector("#nameDisplay")
+            display.innerHTML = `Name: <span style="color:red"> ${fn} ${ln}</span>`
+
+        }
+    </script>
+</body>
+</html>
