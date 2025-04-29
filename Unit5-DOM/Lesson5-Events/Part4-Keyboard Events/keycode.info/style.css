@@ -1,0 +1,15 @@
+body {
+    background-color: skyblue;
+}
+
+#key-info {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.key-box {
+    background-color: lightgray;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 1.5 rem;
+}
