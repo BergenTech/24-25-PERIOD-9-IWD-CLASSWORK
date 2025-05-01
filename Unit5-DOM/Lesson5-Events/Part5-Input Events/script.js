@@ -27,6 +27,7 @@ document.querySelector("#selectDemo").addEventListener("change", function(e){
 // =======================================================
 // Section 3: Focus and Blur Events
 // =======================================================
+// Basic focus and blur events
 document.getElementById('focusDemo').addEventListener("focus", function(e){
     document.querySelector("#focusOutput").textContent = `Input Field is now focused!`
     document.getElementById('focusDemo').style.color = 'white'
@@ -38,5 +39,15 @@ document.getElementById('focusDemo').addEventListener("blur", function(e){
     document.getElementById('focusDemo').style.backgroundColor = 'yellow'
 })
 
+//Form validation with blur event
+const usernameInput = document.querySelector("#usernameInput")
+const usernameError = document.querySelector("#usernameError")
+usernameInput.addEventListener('blur', function(e){
+    if(this.value.length < 4 && this.value.length > 0){
+        usernameInput.classList.add("invalid")
+        usernameInput.classList.remove("valid")
 
-// Basic focus and blur events
+    }
+})
+
+
