@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Input Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .event-container {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .output {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            min-height: 20px;
+            font-family: monospace;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        h3 {
+            margin-top: 0;
+            color: #3498db;
+        }
+        .valid {
+            border-color: green !important;
+        }
+        .invalid {
+            border-color: red !important;
+        }
+        .error {
+            color: red;
+            font-size: 0.8em;
+            display: none;
+            margin-top: 5px;
+        }
+        .char-count {
+            text-align: right;
+            font-size: 0.8em;
+            color: #666;
+        }
+        .instructions {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin-bottom: 20px;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>JavaScript Input Events</h1>
+    
+    <div class="instructions">
+        <p>This lesson demonstrates various JavaScript submit events. Each section introduces a different type of event and how it can be used to create interactive web applications.</p>
+    </div>
+
+    <!-- Section 4: Submit Event -->
+    <div class="event-container" id="section4">
+        <h2>4. Submit Event</h2>
+        <h3>Form Submission</h3>
+        <p>The <code>submit</code> event fires when a form is submitted.</p>
+        <form id="formDemo">
+            <input type="text" placeholder="Enter your name" required>
+            <button type="submit">Submit Form</button>
+        </form>
+        <div class="output" id="submitOutput">Output will appear here...</div>
+    </div>
+
+    <!-- Section 5: Select and Copy Events -->
+    <div class="event-container" id="section5">
+        <h2>5. Select and Copy Events</h2>
+        <h3>Text Selection Events</h3>
+        <p>The <code>select</code> event fires when text is selected in an input or textarea. The <code>copy</code> event fires when content is copied.</p>
+        <textarea id="selectDemo" rows="3">Try selecting this text or copying it.</textarea>
+        <div class="output" id="selectOutput">Output will appear here...</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

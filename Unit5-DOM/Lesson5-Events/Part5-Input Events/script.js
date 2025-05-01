@@ -4,7 +4,7 @@
 const inputDemo = document.querySelector('#inputDemo')
 const inputOutput = document.querySelector('#inputOutput')
 
-inputDemo.addEventListener('input', function(e){
+inputDemo.addEventListener('input', function (e) {
     inputOutput.textContent = `Current Value: ${e.target.value}`
 
 })
@@ -17,23 +17,23 @@ inputDemo.addEventListener('input', function(e){
 //     changeOutput.textContent = `Value committed: ${e.target.value}`
 // })
 
-document.querySelector("#changeDemo").addEventListener('change', function(e){
+document.querySelector("#changeDemo").addEventListener('change', function (e) {
     document.querySelector("#changeOutput").textContent = `Value committed: ${e.target.value}`
 })
 
-document.querySelector("#selectDemo").addEventListener("change", function(e){
+document.querySelector("#selectDemo").addEventListener("change", function (e) {
     document.querySelector("#selectOutput").textContent = `Selected option: ${e.target.value}`
 })
 // =======================================================
 // Section 3: Focus and Blur Events
 // =======================================================
 // Basic focus and blur events
-document.getElementById('focusDemo').addEventListener("focus", function(e){
+document.getElementById('focusDemo').addEventListener("focus", function (e) {
     document.querySelector("#focusOutput").textContent = `Input Field is now focused!`
     document.getElementById('focusDemo').style.color = 'white'
     document.getElementById('focusDemo').style.backgroundColor = 'black'
 })
-document.getElementById('focusDemo').addEventListener("blur", function(e){
+document.getElementById('focusDemo').addEventListener("blur", function (e) {
     document.querySelector("#focusOutput").textContent = `Input Field is now focused!`
     document.getElementById('focusDemo').style.color = 'black'
     document.getElementById('focusDemo').style.backgroundColor = 'yellow'
@@ -42,11 +42,22 @@ document.getElementById('focusDemo').addEventListener("blur", function(e){
 //Form validation with blur event
 const usernameInput = document.querySelector("#usernameInput")
 const usernameError = document.querySelector("#usernameError")
-usernameInput.addEventListener('blur', function(e){
-    if(this.value.length < 4 && this.value.length > 0){
+const validationOutput = document.querySelector("#validationOutput")
+usernameInput.addEventListener('blur', function (e) {
+    if (this.value.length < 4 && this.value.length > 0) {
         usernameInput.classList.add("invalid")
         usernameInput.classList.remove("valid")
-
+        usernameError.style.display = 'block'
+        validationOutput.textContent = "Validation Failed: Username is too short!"
+    } else if (this.value.length >= 4) {
+        usernameInput.classList.add("valid")
+        usernameInput.classList.remove("invalid")
+        usernameError.style.display = 'none'
+        validationOutput.textContent = "Validation Passed: Username is valid!"
+    }else {
+        usernameInput.classList.remove("invalid", "valid")
+        usernameError.style.display = 'none'
+        validationOutput.textContent = "Field is empty"
     }
 })
 
