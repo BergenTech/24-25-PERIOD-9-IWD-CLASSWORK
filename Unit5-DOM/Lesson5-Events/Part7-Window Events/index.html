@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Script in head -->
+    <!-- Use `defer` when you put script in head -->
+    <script src="events-minimal.js" defer></script>
+    <title>Window Events Minimal</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+        transition: background-color 0.3s, color 0.3s;
+      }
+      
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      
+      .section {
+        margin-bottom: 30px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+      
+      .event-log {
+        background-color: #f4f4f4;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 15px;
+        height: 200px;
+        overflow-y: auto;
+        font-family: monospace;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Window Events</h1>
+      
+   
+      
+      <div class="section">
+        <h2>Load Events</h2>
+        <p>
+          This section demonstrates load events:
+        </p>
+        <ul>
+          <li><code>window.onload</code> - Traditional way</li>
+          <li><code>addEventListener('load')</code> - Modern approach</li>
+          <li><code>DOMContentLoaded</code> - Fires earlier than load</li>
+        </ul>
+        <p>Refresh the page to see these events fire again.</p>
+      </div>
+      
+      <div class="section">
+        <h2>Resize Event</h2>
+        <p>
+          Try resizing your browser window to see this in action. The heading will 
+          change to display the current window dimensions.
+        </p>
+        <p>Current window size: <span id="size"></span></p>
+      </div>
+      
+      <div class="section">
+        <h2>Scroll Event</h2>
+        <p>
+          Scroll down to see background color change (after 70px). 
+          Current scroll position: <span id="scroll-pos">0px</span>
+        </p>
+      </div>
+      
+      <div class="section">
+        <h2>Focus & Blur Events</h2>
+        <p>
+          Click outside the browser window or tab to see focus/blur events.
+          When the window loses focus, paragraphs will turn black. When it 
+          regains focus, paragraphs will turn blue.
+        </p>
+      </div>
+      
+      <!-- Extra content to allow scrolling -->
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum dolores
+        dolorum tempore repudiandae odio commodi obcaecati excepturi, blanditiis
+        quaerat alias iure odit id ut, saepe veniam voluptatem ipsam nihil facere.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+        accusantium debitis, ipsum animi sunt laudantium. Sint non deleniti ab
+        consectetur quae reprehenderit nulla pariatur delectus ipsa fugit tempora, 
+        possimus tenetur.
+      </p>
+      <p>
+        Scroll down more to test the scroll event handler background color change.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam doloremque
+        quia fuga consequatur ea distinctio iste ab similique rem ipsum perspiciatis
+        facere repellendus, culpa iusto doloribus quis, aut quam ratione.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam doloremque
+        quia fuga consequatur ea distinctio iste ab similique rem ipsum perspiciatis
+        facere repellendus, culpa iusto doloribus quis, aut quam ratione.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam doloremque
+        quia fuga consequatur ea distinctio iste ab similique rem ipsum perspiciatis
+        facere repellendus, culpa iusto doloribus quis, aut quam ratione.
+      </p>
+    </div>
+    
+    <!-- Add a basic JS enhancement to show scroll position in the UI -->
+    <script>
+      // Update scroll position display
+      window.addEventListener('scroll', () => {
+        document.getElementById('scroll-pos').textContent = window.scrollY + 'px';
+      });
+      
+      // Update window size display
+      function updateSize() {
+        document.getElementById('size').textContent = 
+          window.innerWidth + 'px × ' + window.innerHeight + 'px';
+      }
+      
+      window.addEventListener('load', updateSize);
+      window.addEventListener('resize', updateSize);
+    </script>
+  </body>
+</html>
