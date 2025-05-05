@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Events Quiz</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container py-5">
+        <!-- Welcome screen -->
+        <div id="welcome-screen" class="card shadow">
+            <div class="card-body text-center p-5">
+                <h1 class="display-4 mb-4">JavaScript Events Quiz</h1>
+                <p class="lead mb-5">Test your knowledge of JavaScript Events!</p>
+                
+                <form id="player-form" class="mx-auto" style="max-width: 400px;">
+                    <div class="mb-4">
+                        <label for="player-name" class="form-label">Enter your name:</label>
+                        <input type="text" id="player-name" class="form-control form-control-lg" placeholder="Your name">
+                        <span id="name-error" class="error form-text text-danger d-none">Name must be at least 3 characters</span>
+                    </div>
+                    <button type="submit" id="start-btn" class="btn btn-primary btn-lg w-100">Start Quiz</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Quiz container -->
+        <div id="quiz-container" class="card shadow d-none">
+            <div id="quiz-header" class="card-header bg-light">
+                <h2 class="h3 mb-3">JavaScript Events Quiz</h2>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <div id="player-info">
+                        <span id="player-name-display" class="badge bg-primary"></span>
+                    </div>
+                    <div id="timer" class="badge bg-warning text-dark">Time: <span id="time-remaining">60</span>s</div>
+                </div>
+                <div id="progress-container" class="mb-2">
+                    <div class="progress" style="height: 10px;">
+                        <div id="progress-fill" class="progress-bar bg-success" role="progressbar" style="width: 0%"></div>
+                    </div>
+                    <div class="text-end mt-1">
+                        <small id="question-counter">Question <span id="current-question">1</span> of <span id="total-questions">5</span></small>
+                    </div>
+                </div>
+            </div>
+
+            <div id="question-container" class="card-body p-4">
+                <h3 id="question-text" class="mb-4">Question text will go here</h3>
+                <div id="options-container" class="d-grid gap-3">
+                    <!-- Answer options will be added here -->
+                </div>
+            </div>
+
+            <div id="quiz-footer" class="card-footer d-flex justify-content-between p-3">
+                <button id="prev-btn" class="btn btn-outline-secondary">Previous</button>
+                <button id="next-btn" class="btn btn-primary">Next</button>
+                <button id="submit-btn" class="btn btn-success d-none">Submit Quiz</button>
+            </div>
+        </div>
+
+        <!-- Results screen -->
+        <div id="results-screen" class="card shadow d-none">
+            <div class="card-body text-center p-4">
+                <h2 class="display-5 mb-4">Quiz Results</h2>
+                <div id="score-container" class="mb-4">
+                    <div class="display-6 mb-3">Your score: <span id="score">0</span>/<span id="max-score">5</span></div>
+                    <div id="results-message" class="lead"></div>
+                </div>
+                <div id="answer-review" class="text-start mb-4">
+                    <!-- Review of answers will go here -->
+                </div>
+                <button id="restart-btn" class="btn btn-primary btn-lg">Restart Quiz</button>
+            </div>
+        </div>
+
+        <!-- Keyboard shortcuts guide -->
+        <div id="shortcuts-guide" class="card mt-3 d-none">
+            <div class="card-header bg-light">
+                <h4>Keyboard Shortcuts</h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item">← Previous question</li>
+                    <li class="list-group-item">→ Next question</li>
+                    <li class="list-group-item">1-4: Select answer option</li>
+                    <li class="list-group-item">Enter: Submit quiz (on last question)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Quiz Script -->
+    <script src="starter.js"></script>
+</body>
+</html>
