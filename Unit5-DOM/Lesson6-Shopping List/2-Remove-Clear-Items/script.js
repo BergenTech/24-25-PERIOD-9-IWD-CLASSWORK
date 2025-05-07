@@ -2,6 +2,7 @@
 const itemForm = document.getElementById("item-form")
 const itemInput = document.querySelector("#item-input")
 const itemList = document.querySelector("#item-list")
+const clearBtn = document.getElementById("clear")
 
 //Function to add a new item
 function addItem(e){
@@ -43,6 +44,19 @@ function removeItem(e){
   }
 }
 
+function clearItems(){
+  //Confirm before clear all items
+  if(confirm('Are you sure you want to clear all items?')){
+    //first way
+    itemList.innerHTML = ""
+    
+    //second way - faster and more efficient
+    while(itemList.firstChild){
+      itemList.removeChild(itemList.firstChild)
+    }
+  }
+}
+
 //Function to Initialize the application
 function initApp(){
   //Add item event
@@ -50,6 +64,9 @@ function initApp(){
 
   //Remove item event
   itemList.addEventListener('click', removeItem)
+
+  //Clear all items event
+  clearBtn.addEventListener('click', clearItems)
 
 }
 
